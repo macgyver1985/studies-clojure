@@ -1,4 +1,4 @@
-(ns studies-clojure.core)
+(ns introduction.funcs)
 
 (defn apply-discount?
   [value]

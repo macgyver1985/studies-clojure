@@ -1,6 +1,6 @@
 (ns studies-clojure.core-test
   (:require [clojure.test :refer :all]
-            [studies-clojure.core :refer :all]))
+            [studies-clojure.funcs :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

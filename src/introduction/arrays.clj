@@ -1,4 +1,4 @@
-(ns studies-clojure.Array)
+(ns introduction.arrays)
 
 (def prices
   [30.0 700.0 1000.0 105.0])
