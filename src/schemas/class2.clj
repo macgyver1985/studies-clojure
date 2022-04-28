@@ -20,27 +20,34 @@
 (println "\n\n")
 
 (s/defn new-patient :- Patient
-  [id :- s/Num name :- s/Str]
-  {:id id :name name})
+  [name :- s/Str]
+  {:id "dsd" :name name})
 
-(pprint (new-patient 12 "Mary"))
+(pprint (new-patient "Mary"))
 
 (println "\n\n")
 
 (s/defn only-positive?
-  [value :- s/Num]
+  [value :- s/Int]
   (> value 0))
 
-(def OnlyPositive (s/pred only-positive? 'OnlyPositive))
+(def OnlyPositive? (s/pred only-positive? 'OnlyPositive))
 
-(pprint (s/validate OnlyPositive 16))
+(pprint (s/validate OnlyPositive? 16))
 
 (println "\n\n")
 
-(def OnlyPositive2 (s/pred
+(def OnlyPositive2? (s/pred
                     (s/fn
                       [value :- s/Num]
-                      (> value 0)) 'OnlyPositive2))
+                      (> value 0)) 'OnlyPositive2?))
 
-(pprint (s/validate OnlyPositive2 16))
+(pprint (s/validate OnlyPositive2? 16))
+
+(def Patient
+  "Patient schema"
+  {:id (s/constrained s/Int only-positive?) :name s/Str})
+
+(pprint (s/validate Patient {:id 15 :name "Mary"}))
+
 

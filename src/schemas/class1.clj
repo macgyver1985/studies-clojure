@@ -87,4 +87,4 @@
 
 (pprint visits)
 
-(print-visits-patient-report visits (id (patients 1)))
+(print-visits-patient-report visits (:id (patients 1)))
